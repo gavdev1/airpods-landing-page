@@ -1,0 +1,190 @@
+/*Google fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+/*----- VARIABLES CSS Y SASS -----*/
+/*Variables css*/
+/*Colores*/
+:root {
+  --first-color: #1D1D1F;
+  --second-color: #0071E3;
+  --white-color: #FFF;
+}
+
+/*Fuente y tipografia*/
+:root {
+  --body-font: 'Roboto', sans-serif;
+  --biggest-font-size: 3.5rem;
+  --bigger-font-size: 2.25rem;
+  --big-font-size: 1.625rem;
+  --normal-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 8rem;
+    --bigger-font-size: 4.5rem;
+    --big-font-size: 2.5rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.938rem;
+  }
+}
+
+/*z index*/
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*----- LAYOUT -----*/
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--white-color);
+  color: var(--first-color);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+p{
+  line-height: 1.5;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--first-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 1em;
+}
+
+.grid{
+  display: grid;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+/*----- PAGES -----*/
+.header{
+  padding: 1em;
+}
+
+.nav{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo{
+  font-weight: 700;
+}
+
+.nav__menu{
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.nav__menu-element{
+  color: #777;
+  display: none;
+}
+
+.nav__button{
+  padding: 0.5em 1em;
+  border-radius: 16px;
+  background-color: var(--second-color);
+  color: var(--white-color);
+}
+
+.airpods{
+  margin-top: 3em;
+  text-align: center;
+}
+
+.airpods__text-title{
+  font-size: var(--biggest-font-size);
+}
+
+.airpods__image{
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.airpods__image-img-1,
+.airpods__image-img-2 {
+  width: 25%;
+}
+
+.airpods__image-img-1{
+  animation: airpods-animation-1 2s infinite alternate;
+}
+
+.airpods__image-img-2{
+  animation: airpods-animation-2 2s infinite alternate;
+}
+
+@media (min-width: 768px){
+  .nav__menu-element{
+    display: block;
+  }
+
+  .airpods{
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .airpods__text{
+    text-align: left;
+  }
+}
+
+@keyframes airpods-animation-1 {
+  to{
+    transform: translateY(-2em);
+  }
+
+  from{
+    transform: translateY(2em);
+  }
+}
+
+@keyframes airpods-animation-2 {
+  to{
+    transform: translateY(2em);
+  }
+
+  from{
+    transform: translateY(-2em);
+  }
+}
